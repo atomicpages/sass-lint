@@ -9,7 +9,7 @@ Rule `class-name-format` will enforce a convention for class names.
 [`hyphenatedbem`](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/),
 or a Regular Expression that the class name must match (e.g. `^[_A-Z]+$`)
 * `convention-explanation`: Custom explanation to display to the user if a class doesn't adhere to the convention
-* `ignore`: Array of names to ignore
+* `ignore`: Array of names to ignore or a custom Regular Expression to ignore (e.g. `^myApp.*$`)
 
 ## Example 1
 
@@ -277,5 +277,28 @@ When enabled, the following are disallowed:
 
 .foo {
   @extend .camelCase;
+}
+```
+
+
+## Example 9
+
+Settings:
+- `convention: hyphenatedlowercase`
+- `ignore: /myAppPrefix.*/`
+
+When enabled, the following are allowed:
+
+```scss
+.myAppPrefix {
+  color: red;
+
+  .nested {
+    height: 10px;
+  }
+}
+
+.myAppPrefix__ele {
+  color: red;
 }
 ```

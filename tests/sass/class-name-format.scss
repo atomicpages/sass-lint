@@ -133,3 +133,16 @@
 .strict-bem__elem_key--fail {
   color: red;
 }
+
+// Ignore pattern
+.myAppPrefix {
+  color: red;
+
+  .nested {
+    height: 10px;
+  }
+}
+
+.myAppPrefix__ele {
+  color: red;
+}

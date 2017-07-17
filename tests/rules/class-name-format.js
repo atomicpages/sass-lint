@@ -12,7 +12,7 @@ describe('class name format - scss', function () {
     lint.test(file, {
       'class-name-format': 1
     }, function (data) {
-      lint.assert.equal(31, data.warningCount);
+      lint.assert.equal(33, data.warningCount);
       done();
     });
   });
@@ -26,7 +26,21 @@ describe('class name format - scss', function () {
         }
       ]
     }, function (data) {
-      lint.assert.equal(30, data.warningCount);
+      lint.assert.equal(32, data.warningCount);
+      done();
+    });
+  });
+
+  it('[convention: hyphenatedlowercase with ignore regex]', function (done) {
+    lint.test(file, {
+      'class-name-format': [
+        1,
+        {
+          'ignore': /^myAppPrefix.*/
+        }
+      ]
+    }, function (data) {
+      lint.assert.equal(31, data.warningCount);
       done();
     });
   });
@@ -40,7 +54,7 @@ describe('class name format - scss', function () {
         }
       ]
     }, function (data) {
-      lint.assert.equal(40, data.warningCount);
+      lint.assert.equal(41, data.warningCount);
       done();
     });
   });
@@ -54,7 +68,7 @@ describe('class name format - scss', function () {
         }
       ]
     }, function (data) {
-      lint.assert.equal(40, data.warningCount);
+      lint.assert.equal(43, data.warningCount);
       done();
     });
   });
@@ -68,7 +82,7 @@ describe('class name format - scss', function () {
         }
       ]
     }, function (data) {
-      lint.assert.equal(36, data.warningCount);
+      lint.assert.equal(38, data.warningCount);
       done();
     });
   });
@@ -82,7 +96,7 @@ describe('class name format - scss', function () {
         }
       ]
     }, function (data) {
-      lint.assert.equal(17, data.warningCount);
+      lint.assert.equal(19, data.warningCount);
       done();
     });
   });
@@ -96,7 +110,7 @@ describe('class name format - scss', function () {
         }
       ]
     }, function (data) {
-      lint.assert.equal(24, data.warningCount);
+      lint.assert.equal(26, data.warningCount);
       done();
     });
   });
@@ -110,7 +124,7 @@ describe('class name format - scss', function () {
         }
       ]
     }, function (data) {
-      lint.assert.equal(42, data.warningCount);
+      lint.assert.equal(45, data.warningCount);
       done();
     });
   });
@@ -126,7 +140,7 @@ describe('class name format - scss', function () {
         }
       ]
     }, function (data) {
-      lint.assert.equal(38, data.warningCount);
+      lint.assert.equal(41, data.warningCount);
       lint.assert.equal(data.messages[0].message, message);
       done();
     });
@@ -143,7 +157,7 @@ describe('class name format - sass', function () {
     lint.test(file, {
       'class-name-format': 1
     }, function (data) {
-      lint.assert.equal(31, data.warningCount);
+      lint.assert.equal(33, data.warningCount);
       done();
     });
   });
@@ -157,7 +171,21 @@ describe('class name format - sass', function () {
         }
       ]
     }, function (data) {
-      lint.assert.equal(30, data.warningCount);
+      lint.assert.equal(32, data.warningCount);
+      done();
+    });
+  });
+
+  it('[convention: hyphenatedlowercase with ignore regex]', function (done) {
+    lint.test(file, {
+      'class-name-format': [
+        1,
+        {
+          'ignore': /^myAppPrefix.*/
+        }
+      ]
+    }, function (data) {
+      lint.assert.equal(31, data.warningCount);
       done();
     });
   });
@@ -171,7 +199,7 @@ describe('class name format - sass', function () {
         }
       ]
     }, function (data) {
-      lint.assert.equal(40, data.warningCount);
+      lint.assert.equal(41, data.warningCount);
       done();
     });
   });
@@ -185,7 +213,7 @@ describe('class name format - sass', function () {
         }
       ]
     }, function (data) {
-      lint.assert.equal(40, data.warningCount);
+      lint.assert.equal(43, data.warningCount);
       done();
     });
   });
@@ -199,7 +227,7 @@ describe('class name format - sass', function () {
         }
       ]
     }, function (data) {
-      lint.assert.equal(36, data.warningCount);
+      lint.assert.equal(38, data.warningCount);
       done();
     });
   });
@@ -213,7 +241,7 @@ describe('class name format - sass', function () {
         }
       ]
     }, function (data) {
-      lint.assert.equal(17, data.warningCount);
+      lint.assert.equal(19, data.warningCount);
       done();
     });
   });
@@ -227,7 +255,7 @@ describe('class name format - sass', function () {
         }
       ]
     }, function (data) {
-      lint.assert.equal(24, data.warningCount);
+      lint.assert.equal(26, data.warningCount);
       done();
     });
   });
@@ -241,7 +269,7 @@ describe('class name format - sass', function () {
         }
       ]
     }, function (data) {
-      lint.assert.equal(42, data.warningCount);
+      lint.assert.equal(45, data.warningCount);
       done();
     });
   });
@@ -257,7 +285,7 @@ describe('class name format - sass', function () {
         }
       ]
     }, function (data) {
-      lint.assert.equal(38, data.warningCount);
+      lint.assert.equal(41, data.warningCount);
       lint.assert.equal(data.messages[0].message, message);
       done();
     });
